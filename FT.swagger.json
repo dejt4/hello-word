@@ -1,0 +1,1065 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "FastTrackIntegration.Host",
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "/FastTrackIntegration"
+    }
+  ],
+  "paths": {
+    "/EventService.svc/userdetails/{userId}": {
+      "get": {
+        "tags": [
+          "EventService"
+        ],
+        "operationId": "EventServiceGetUserDetailsGET",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.EventService.UserDetailsResponseEntity"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/EventService.svc/userblocks/{userId}": {
+      "get": {
+        "tags": [
+          "EventService"
+        ],
+        "operationId": "EventServiceGetUserBlocksGET",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.EventService.UserBlocksResponseEntity"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/EventService.svc/userconsents/{userId}": {
+      "get": {
+        "tags": [
+          "EventService"
+        ],
+        "operationId": "EventServiceGetUserConsentsGET",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.EventService.UserConsentsResponseEntity"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "EventService"
+        ],
+        "operationId": "EventServiceUpdateUserConsentsPOST",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.EventService.UserConsentsRequestEntity"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/EventService.svc/reconciliation": {
+      "post": {
+        "tags": [
+          "EventService"
+        ],
+        "operationId": "EventServiceReconciliationPOST",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.EventService.ReconciliationRequestEntity"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.EventService.ReconciliationResponseEntity"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/EventService.svc/bonus/credit": {
+      "post": {
+        "tags": [
+          "EventService"
+        ],
+        "operationId": "EventServiceBonusCreditPOST",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.EventService.BonusCreditRequestEntity"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.EventService.BaseResponseEntity"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/EventService.svc/bonus/credit/funds": {
+      "post": {
+        "tags": [
+          "EventService"
+        ],
+        "operationId": "EventServiceBonusCreditFundsPOST",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.EventService.BonusCreditFundsRequestEntity"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.EventService.BaseResponseEntity"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/EventService.svc/authenticate": {
+      "post": {
+        "tags": [
+          "EventService"
+        ],
+        "operationId": "EventServiceAuthenticatePOST",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.EventService.AuthenticateRequestEntity"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.EventService.AuthenticateResponseEntity"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/EventService.svc/bonus/list": {
+      "get": {
+        "tags": [
+          "EventService"
+        ],
+        "operationId": "EventServiceGetAutomaticBonusesGET",
+        "parameters": [
+          {
+            "name": "origin",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 2
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.EventService.BonusesResponseEntity"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/EventService.svc/bonus/list/funds": {
+      "get": {
+        "tags": [
+          "EventService"
+        ],
+        "operationId": "EventServiceGetManualBonusesGET",
+        "parameters": [
+          {
+            "name": "origin",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 2
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.EventService.BonusesResponseEntity"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/RealTimeDataService.svc/v2/integration/login": {
+      "post": {
+        "tags": [
+          "RealTimeDataService"
+        ],
+        "operationId": "RealTimeDataServiceLoginPOST",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.RealTimeDataService.LoginRequestEntity"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.RealTimeDataService.BaseResponseEntity"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/RealTimeDataService.svc/v1/integration/payment": {
+      "post": {
+        "tags": [
+          "RealTimeDataService"
+        ],
+        "operationId": "RealTimeDataServicePaymentsPOST",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.RealTimeDataService.PaymentsRequestEntity"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.RealTimeDataService.BaseResponseEntity"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/RealTimeDataService.svc/v2/integration/user": {
+      "post": {
+        "tags": [
+          "RealTimeDataService"
+        ],
+        "operationId": "RealTimeDataServiceRegistrationsPOST",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.RealTimeDataService.RegistrationRequestEntity"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.RealTimeDataService.BaseResponseEntity"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "RealTimeDataService"
+        ],
+        "operationId": "RealTimeDataServiceUserUpdatesPUT",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.RealTimeDataService.UserUpdateRequestEntity"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.RealTimeDataService.BaseResponseEntity"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/RealTimeDataService.svc/v2/integration/user/blocks": {
+      "put": {
+        "tags": [
+          "RealTimeDataService"
+        ],
+        "operationId": "RealTimeDataServiceUserBlocksPUT",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.RealTimeDataService.UserBlocksRequestEntity"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.RealTimeDataService.BaseResponseEntity"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/RealTimeDataService.svc/v2/integration/user/consents": {
+      "put": {
+        "tags": [
+          "RealTimeDataService"
+        ],
+        "operationId": "RealTimeDataServiceUserConsentsPUT",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.RealTimeDataService.UserConsentsRequestEntity"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.RealTimeDataService.BaseResponseEntity"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.EventService.AuthenticateRequestEntity": {
+        "type": "object",
+        "properties": {
+          "sid": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.EventService.AuthenticateResponseEntity": {
+        "type": "object",
+        "properties": {
+          "user_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "error": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.EventService.BaseResponseEntity": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.EventService.BlocksResponseEntity": {
+        "type": "object",
+        "properties": {
+          "active": {
+            "type": "boolean"
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "note": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.EventService.BonusCreditFundsRequestEntity": {
+        "type": "object",
+        "properties": {
+          "user_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "bonus_code": {
+            "type": "string",
+            "nullable": true
+          },
+          "amount": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "currency": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.EventService.BonusCreditRequestEntity": {
+        "type": "object",
+        "properties": {
+          "user_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "bonus_code": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.EventService.BonusResponseEntity": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.EventService.BonusesResponseEntity": {
+        "type": "object",
+        "properties": {
+          "Data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.EventService.BonusResponseEntity"
+            },
+            "nullable": true
+          },
+          "error": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.EventService.ConsentsRequestEntity": {
+        "type": "object",
+        "properties": {
+          "opted_in": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.EventService.ConsentsResponseEntity": {
+        "type": "object",
+        "properties": {
+          "opted_in": {
+            "type": "boolean"
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.EventService.ReconciliationRequestEntity": {
+        "type": "object",
+        "properties": {
+          "field": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.EventService.ReconciliationResponseEntity": {
+        "type": "object",
+        "properties": {
+          "users": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "nullable": true
+          },
+          "error": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.EventService.UserBlocksResponseEntity": {
+        "type": "object",
+        "properties": {
+          "blocks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.EventService.BlocksResponseEntity"
+            },
+            "nullable": true
+          },
+          "error": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.EventService.UserConsentsRequestEntity": {
+        "type": "object",
+        "properties": {
+          "consents": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.EventService.ConsentsRequestEntity"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.EventService.UserConsentsResponseEntity": {
+        "type": "object",
+        "properties": {
+          "consents": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.EventService.ConsentsResponseEntity"
+            },
+            "nullable": true
+          },
+          "error": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.EventService.UserDetailsResponseEntity": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
+          "birth_date": {
+            "type": "string",
+            "nullable": true
+          },
+          "city": {
+            "type": "string",
+            "nullable": true
+          },
+          "country": {
+            "type": "string",
+            "nullable": true
+          },
+          "currency": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "first_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "is_blocked": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "is_excluded": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "language": {
+            "type": "string",
+            "nullable": true
+          },
+          "last_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "mobile": {
+            "type": "string",
+            "nullable": true
+          },
+          "mobile_prefix": {
+            "type": "string",
+            "nullable": true
+          },
+          "origin": {
+            "type": "string",
+            "nullable": true
+          },
+          "postal_code": {
+            "type": "string",
+            "nullable": true
+          },
+          "roles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "sex": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "user_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "username": {
+            "type": "string",
+            "nullable": true
+          },
+          "verified_at": {
+            "type": "string",
+            "nullable": true
+          },
+          "registration_code": {
+            "type": "string",
+            "nullable": true
+          },
+          "registration_date": {
+            "type": "string",
+            "nullable": true
+          },
+          "affiliate_reference": {
+            "type": "string",
+            "nullable": true
+          },
+          "market": {
+            "type": "string",
+            "nullable": true
+          },
+          "segmentation": {
+            "nullable": true
+          },
+          "error": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.RealTimeDataService.BaseResponseEntity": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "nullable": true
+          },
+          "code": {
+            "type": "string",
+            "nullable": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.RealTimeDataService.LoginRequestEntity": {
+        "type": "object",
+        "properties": {
+          "is_impersonated": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "user_agent": {
+            "type": "string",
+            "nullable": true
+          },
+          "ip_address": {
+            "type": "string",
+            "nullable": true
+          },
+          "user_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "nullable": true
+          },
+          "origin": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.RealTimeDataService.PaymentsRequestEntity": {
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "currency": {
+            "type": "string",
+            "nullable": true
+          },
+          "fee_amount": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "exchange_rate": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "note": {
+            "type": "string",
+            "nullable": true
+          },
+          "payment_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "vendor_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "vendor_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "user_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "nullable": true
+          },
+          "origin": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.RealTimeDataService.RegistrationRequestEntity": {
+        "type": "object",
+        "properties": {
+          "url_referer": {
+            "type": "string",
+            "nullable": true
+          },
+          "note": {
+            "type": "string",
+            "nullable": true
+          },
+          "user_agent": {
+            "type": "string",
+            "nullable": true
+          },
+          "ip_address": {
+            "type": "string",
+            "nullable": true
+          },
+          "user_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "nullable": true
+          },
+          "origin": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.RealTimeDataService.UserBlocksRequestEntity": {
+        "type": "object",
+        "properties": {
+          "user_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "nullable": true
+          },
+          "origin": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.RealTimeDataService.UserConsentsRequestEntity": {
+        "type": "object",
+        "properties": {
+          "user_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "nullable": true
+          },
+          "origin": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IGP.Integrations.FastTrack.FastTrackIntegration.Interfaces.DTO.RealTimeDataService.UserUpdateRequestEntity": {
+        "type": "object",
+        "properties": {
+          "user_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "nullable": true
+          },
+          "origin": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
